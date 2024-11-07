@@ -25,3 +25,27 @@ const images = [
   },
 ];
 
+
+const gallery = document.querySelector(".gallery");
+
+
+const elements = images.map((image) => {
+  const listEl = document.createElement("li")
+  listEl.classList.add(".gallery-list");
+  
+  const imgEl = document.createElement("img");
+
+  imgEl.setAttribute("src", image.url);
+  imgEl.setAttribute("alt", image.alt);
+  imgEl.setAttribute("width", 360);
+  
+  listEl.append(imgEl)
+  return listEl;
+});
+
+gallery.append(...elements);
+
+
+
+
+
